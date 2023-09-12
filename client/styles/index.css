@@ -28,7 +28,7 @@ body {
 }
 
 .header {
-  background: #ff3636;
+  background: #3a0606;
   color: white;
   padding: 1rem;
   text-align: center;
@@ -80,7 +80,7 @@ body {
 
 .main button {
   cursor: pointer;
-  background: #50b3a2;
+  background: #002fff;
   color: #fff;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -88,7 +88,7 @@ body {
 }
 
 .main button:hover {
-  background: #338f7b;
+  background: #ff0800;
 }
 
 .main ul {
@@ -105,11 +105,11 @@ body {
 
 .main li button {
   margin-left: 1rem;
-  background: #d9534f;
+  background: #002fff;
 }
 
 .main li button:hover {
-  background: #c9302c;
+  background: #ff0800;
 }
 
 .main div {
