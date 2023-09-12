@@ -1,23 +1,22 @@
 import connection from './connection.ts'
 
-// Get all animals
 export function getAllAnimals() {
-  return connection('animals').select()
+  return connection('animal_protein_content').select()
 }
 
-// Get animal by ID
 export function getAnimalById(animalId) {
-  return connection('animals').select().where({ id: animalId }).first()
+  return connection('animal_protein_content')
+    .select()
+    .where({ id: animalId })
+    .first()
 }
 
-// Add new animal
 export function addAnimal(animal) {
-  return connection('animals').insert(animal)
+  return connection('animal_protein_content').insert(animal)
 }
 
-// Update existing animal by ID
 export function updateAnimal(animalWithId) {
-  return connection('animals')
+  return connection('animal_protein_content')
     .update({
       name: animalWithId.name,
       total_protein_content: animalWithId.total_protein_content,
@@ -25,7 +24,6 @@ export function updateAnimal(animalWithId) {
     .where('id', animalWithId.id)
 }
 
-// Delete animal by ID
 export function deleteAnimal(id) {
-  return connection('animals').delete().where({ id })
+  return connection('animal_protein_content').delete().where({ id })
 }
