@@ -3,7 +3,10 @@
   "type": "module",
   "version": "0.1.0",
   "description": "Build a fullstack collection app",
-  "repository": "https://https://github.com/dev-academy-challenges/my-fullstack-collection-query",
+  "repository": {
+    "type": "git",
+    "url": "https://https://github.com/dev-academy-challenges/my-fullstack-collection-query"
+  },
   "main": "server/index.ts",
   "scripts": {
     "start": "node dist/server.js",
