@@ -1,9 +1,10 @@
 import connection from './connection.ts'
 
-export function getAllAnimals() {
-  return connection('animal_protein_content').select()
+export function getAllAnimals(db = connection) {
+  return db('animal_protein_content').select()
 }
 
+//you don't use this
 export function getAnimalById(animalId) {
   return connection('animal_protein_content')
     .select()
@@ -12,9 +13,10 @@ export function getAnimalById(animalId) {
 }
 
 export function addAnimal(animal) {
-  return connection('animal_protein_content').insert(animal)
+  return connection('animal_protein_content').insert(animal).returning('*')
 }
 
+//you don't use this
 export function updateAnimal(animalWithId) {
   return connection('animal_protein_content')
     .update({
@@ -27,3 +29,5 @@ export function updateAnimal(animalWithId) {
 export function deleteAnimal(id) {
   return connection('animal_protein_content').delete().where({ id })
 }
+
+// You could create interfaces for the Animal (with id) and NewAnimal (without id) types, these would go in the models folder.

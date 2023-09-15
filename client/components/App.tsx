@@ -6,8 +6,14 @@ import AnimalList from './AnimalList'
 import AnimalForm from './AnimalForm'
 
 function App() {
+  // const initialAnimalFormState = {
+  //   name: '',
+  //   total_protein_content: '',
+  // }
+
   const [animals, setAnimals] = useState([])
   const [newAnimal, setNewAnimal] = useState({
+    //replace with variable initialAnimalFormState
     name: '',
     total_protein_content: '',
   })
@@ -25,8 +31,8 @@ function App() {
 
   const handleAddAnimal = async () => {
     const response = await axios.post('/api/animals', newAnimal)
-    setAnimals([...animals, response.data])
-    setNewAnimal({ name: '', total_protein_content: '' })
+    setAnimals([...animals, response.data]) //add the index number for the item to response.data
+    setNewAnimal({ name: '', total_protein_content: '' }) //replace with variable initialAnimalFormState
   }
 
   const handleDeleteAnimal = async (id: number) => {
