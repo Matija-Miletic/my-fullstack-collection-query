@@ -1,10 +1,23 @@
-//Import express and your db functions from the server file
+import express from 'express'
+import { getAllAnimals, addAnimal, deleteAnimal } from '../db/db'
 
-//Create a router
+const router = express.Router()
 
-// const router = express.Router()
+router.get('/', async (req, res) => {
+  const animals = await getAllAnimals()
+  res.json(animals)
+})
 
-// Paste all your routes here
+router.post('/', async (req, res) => {
+  const newAnimal = req.body
+  const animal = await addAnimal(newAnimal)
+  res.json(animal)
+})
 
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params
+  await deleteAnimal(Number(id))
+  res.status(204).end()
+})
 
-// Export the router
+export default router

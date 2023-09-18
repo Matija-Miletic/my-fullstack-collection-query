@@ -1,5 +1,18 @@
-// import request from 'superagent'
+import request from 'superagent'
 
-// const rootUrl = '/api/v1/animals'
+const rootUrl = '/api/v1/animals'
 
-// Move all your axios calls here(use request instead), give them good function names different to the the ones you used in db.ts. Export them and use them in your components.
+export const fetchAllAnimals = () => {
+  return request.get(`${rootUrl}`).then((res) => res.body)
+}
+
+export const addNewAnimal = (newAnimal: object) => {
+  return request
+    .post(`${rootUrl}`)
+    .send(newAnimal)
+    .then((res) => res.body)
+}
+
+export const removeAnimalById = (id: number) => {
+  return request.delete(`${rootUrl}/${id}`).then((res) => res.body)
+}

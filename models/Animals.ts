@@ -1,7 +1,10 @@
-// TODO: export interface Animal {
+export interface Animal {
+  id: number
+  name: string
+  total_protein_content: number
+}
 
-// }
-
-// TODO: export interface NewAnimal {
-
-// }
+export interface NewAnimal {
+  name: string
+  total_protein_content: number
+}
