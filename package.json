@@ -3,7 +3,10 @@
   "type": "module",
   "version": "0.1.0",
   "description": "Build a fullstack collection app",
-  "repository": "https://https://github.com/dev-academy-challenges/my-fullstack-collection-query",
+  "repository": {
+    "type": "git",
+    "url": "https://https://github.com/dev-academy-challenges/my-fullstack-collection-query"
+  },
   "main": "server/index.ts",
   "scripts": {
     "start": "node dist/server.js",
@@ -31,6 +34,7 @@
   },
   "dependencies": {
     "@devacademy/eslint-config": "^1.9.1",
+    "axios": "^1.5.0",
     "express": "^4.17.2",
     "knex": "^2.5.1",
     "sqlite3": "^5.1.6",
